@@ -1,0 +1,20 @@
+     kind: Pod
+     metadata:
+       name: kaniko
+     spec:
+       containers:
+       - name: kaniko
+         image: 946759952272.dkr.ecr.us-east-1.amazonaws.com/kypseli/kaniko:pre-0.4
+         resources:
+           requests:
+             memory: "2Gi"
+         command:
+         - /busybox/cat
+         tty: true
+         volumeMounts:
+           - name: docker-config
+             mountPath: /kaniko/.docker
+       volumes:
+         - name: docker-config
+           configMap:
+             name: docker-config
