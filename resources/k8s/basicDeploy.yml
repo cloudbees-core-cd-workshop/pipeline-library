@@ -1,0 +1,53 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: REPLACE_SERVICE_NAME
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: REPLACE_SERVICE_NAME
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: REPLACE_SERVICE_NAME-production
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: REPLACE_SERVICE_NAME
+      labels:
+        app: REPLACE_SERVICE_NAME
+        env: production
+    spec:
+      containers:
+      - name: REPLACE_SERVICE_NAME
+        image: REPLACE_IMAGE_TAG
+        resources:
+          request:
+            memory: "100Mi"
+            cpu: "50m"
+        imagePullPolicy: Always
+        ports:
+        - name: REPLACE_SERVICE_NAME
+          containerPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: REPLACE_SERVICE_NAME
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /REPLACE_SERVICE_NAME
+        backend:
+          serviceName: REPLACE_SERVICE_NAME
+          servicePort: 80
+    host: prod.workshop.beedemo.net
