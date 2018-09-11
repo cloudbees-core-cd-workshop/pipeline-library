@@ -1,5 +1,5 @@
 // vars/kubeDeploy.groovy
-def call(imageName, imageRepo, imageTag) {
+def call(imageRepo, imageName, imageTag) {
     def label = "kubectl"
     def podYaml = libraryResource 'podtemplates/kubeDeploy.yml'
     def deployYaml = libraryResource 'k8s/basicDeploy.yml'
