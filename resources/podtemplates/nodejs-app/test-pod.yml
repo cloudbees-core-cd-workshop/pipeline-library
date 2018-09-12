@@ -1,0 +1,10 @@
+ kind: Pod
+ metadata:
+   name: foo-bar-test
+ spec:
+   containers:
+   - name: nodejs
+     image: node:10.9.0-alpine
+     command:
+     - cat
+     tty: true
