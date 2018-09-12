@@ -33,7 +33,7 @@ spec:
             cpu: "50m"
         imagePullPolicy: Always
         ports:
-        - name: REPLACE_SERVICE_NAME
+        - name: public
           containerPort: 80
 ---
 apiVersion: extensions/v1beta1
