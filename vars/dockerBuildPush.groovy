@@ -11,6 +11,7 @@ def call(String imageName, String imageTag = env.BUILD_NUMBER, String target = "
         body()
         withEnv(['PATH+EXTRA=/busybox:/kaniko']) {
           sh """#!/busybox/sh
+            ls -la
             executor -f ${pwd()}/${dockerFile} -c ${pwd()} --build-arg buildNumber=${BUILD_NUMBER} -d ${dockerReg}/${repoName}:${imageTag}
           """
         }
