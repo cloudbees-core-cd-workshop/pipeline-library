@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8080
     protocol: TCP
     name: http
   selector:
@@ -34,7 +34,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - name: public
-          containerPort: 80
+          containerPort: 8080
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
