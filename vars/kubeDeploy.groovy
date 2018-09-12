@@ -7,7 +7,7 @@ def call(imageRepo, imageName, imageTag) {
       node(label) {
         writeFile file: "deploy.yml", text: deployYaml
         container("kubectl") {
-          sh("sed -i.bak 's#REPLACE_IMAGE_TAG#946759952272.dkr.ecr.us-east-1.amazonaws.com/${imageRepo}/${imageName}:${imageTag}#' deploy.yml")
+          sh("sed -i.bak 's#REPLACE_IMAGE_TAG#946759952272.dkr.ecr.us-east-1.amazonaws.com/${imageRepo}/${imageName}:${BUILD_NUMBER}#' deploy.yml")
           sh("sed -i.bak 's#REPLACE_SERVICE_NAME#${imageRepo}-${imageName}#' deploy.yml")
           sh "kubectl --namespace=cb-deploy apply -f deploy.yml"
         }
