@@ -10,7 +10,7 @@ def call(imageRepo, imageName, imageTag) {
           sh("sed -i.bak 's#REPLACE_IMAGE_TAG#946759952272.dkr.ecr.us-east-1.amazonaws.com/${imageRepo}/${imageName}:${BUILD_NUMBER}#' deploy.yml")
           sh("sed -i.bak 's#REPLACE_SERVICE_NAME#${imageRepo}-${imageName}#' deploy.yml")
           sh "kubectl --namespace=cb-deploy apply -f deploy.yml"
-          sh "echo 'deployed to https://prod.workshop.beedemo.net/${imageRepo}-${imageName}/"
+          sh "echo 'deployed to https://prod.workshop.beedemo.net/${imageRepo}-${imageName}/'"
         }
       }
     }
