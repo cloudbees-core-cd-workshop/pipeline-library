@@ -2,6 +2,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: REPLACE_SERVICE_NAME
+  labels:
+    net.beedemo.deploy.type: workshop
 spec:
   ports:
   - port: 80
@@ -15,12 +17,15 @@ kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: REPLACE_SERVICE_NAME-production
+  labels:
+    net.beedemo.deploy.type: workshop
 spec:
   replicas: 1
   template:
     metadata:
       name: REPLACE_SERVICE_NAME
       labels:
+        net.beedemo.deploy.type: workshop
         app: REPLACE_SERVICE_NAME
         env: production
     spec:
@@ -40,6 +45,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: REPLACE_SERVICE_NAME
+  labels:
+    net.beedemo.deploy.type: workshop
   annotations:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: /
