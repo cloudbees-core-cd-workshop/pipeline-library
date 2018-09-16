@@ -1,0 +1,16 @@
+<h2>defineProps step</h2>
+<p>
+A custom step for using the <pre>readProperties</pre> step from the Pipeline Utilities plugin with a Declarative Pipeline. 
+</p>
+<h3>Configuration</h3>
+<dl>
+	<dt>name</dt>
+	<dd><pre>String</pre><b>REQUIRED</b> the path to the properties file to be read from the workspace</dd>
+	<dt>defaults</dt>
+	<dd><pre>Map</pre><b>OPTIONAL</b> default values for passed in properties file</dd>
+</dl>
+
+<h3>Example:</h3>
+<pre>
+	defineProps('.nodejs-app', [npmPackages: 'express pug'])
+</pre>
