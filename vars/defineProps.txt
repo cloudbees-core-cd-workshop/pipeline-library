@@ -1,11 +1,11 @@
 <h2>defineProps step</h2>
 <p>
-A custom step for using the <pre>readProperties</pre> step from the Pipeline Utilities plugin with a Declarative Pipeline. 
+A custom step for using the <pre>readProperties</pre> step from the Pipeline Utilities plugin specifically from a Declarative Pipeline. 
 </p>
 <h3>Configuration</h3>
 <dl>
 	<dt>name</dt>
-	<dd><pre>String</pre><b>REQUIRED</b> the path to the properties file to be read from the workspace</dd>
+	<dd><pre>String</pre><b>REQUIRED</b> the file, including path, to be read from the workspace as the properties file</dd>
 	<dt>defaults</dt>
 	<dd><pre>Map</pre><b>OPTIONAL</b> default values for passed in properties file</dd>
 </dl>
