@@ -8,8 +8,18 @@ spec:
     command:
     - cat
     tty: true
-  - name: testcafe
-    image: beedemo/testcafe@sha256:7cae1a73327d2ef2db61a4fe523bd8ee1697c104e928c1de05f207e0220c890c
+  - name: testcafe-chrome
+    image: 946759952272.dkr.ecr.us-east-1.amazonaws.com/kypseli/testcafe:alpha-1
     command:
     - cat
     tty: true
+  - name: testcafe-firefox
+    image: 946759952272.dkr.ecr.us-east-1.amazonaws.com/kypseli/testcafe:alpha-1
+    command:
+    - cat
+    tty: true
+    ports:
+    - name: firefox1
+      containerPort: 1339
+    - name: firefox2
+      containerPort: 1340
