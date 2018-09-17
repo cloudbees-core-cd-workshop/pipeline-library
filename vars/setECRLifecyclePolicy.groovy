@@ -1,5 +1,6 @@
 // vars/setECRLifecyclePolicy.groovy
 def call(String repoName) {
+  repoName = repoName.toLowerCase()
   def label = "aws-cli"
   def podYaml = libraryResource 'podtemplates/awsCli.yml'
   podTemplate(name: 'aws-cli', label: label, yaml: podYaml) {
