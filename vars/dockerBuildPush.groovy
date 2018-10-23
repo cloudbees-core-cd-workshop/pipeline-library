@@ -6,7 +6,7 @@ def call(String imageName, String imageTag = env.BUILD_NUMBER, String target = "
   setECRLifecyclePolicy(repoName)
   def label = "kaniko"
   def podYaml = libraryResource 'podtemplates/dockerBuildPush.yml'
-  podTemplate(name: 'kaniko', label: label, namespace: 'kaniko',  yaml: podYaml) {
+  podTemplate(name: 'kaniko', label: label, yaml: podYaml) {
     node(label) {
       container(name: 'kaniko', shell: '/busybox/sh') {
         body()
