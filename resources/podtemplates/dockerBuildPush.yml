@@ -7,7 +7,7 @@
          image: 946759952272.dkr.ecr.us-east-1.amazonaws.com/kypseli/kaniko:pre-0.4
          resources:
            requests:
-             memory: "2Gi"
+             memory: "1Gi"
          command:
          - /busybox/cat
          tty: true
