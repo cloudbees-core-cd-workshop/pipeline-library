@@ -11,4 +11,3 @@
          command:
          - cat
          tty: true
-       serviceAccountName: cb-deploy
