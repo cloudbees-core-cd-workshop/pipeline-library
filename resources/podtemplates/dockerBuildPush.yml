@@ -18,4 +18,3 @@
          - name: docker-config
            configMap:
              name: docker-config
-       serviceAccountName: kaniko
