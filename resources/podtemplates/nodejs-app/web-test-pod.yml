@@ -4,22 +4,12 @@ metadata:
 spec:
   containers:
   - name: nodejs
-    image: node:10.9.0-alpine
+    image: node:10.10.0-alpine
     command:
     - cat
     tty: true
-  - name: testcafe-chrome
+  - name: testcafe
     image: 946759952272.dkr.ecr.us-east-1.amazonaws.com/kypseli/testcafe:alpha-1
     command:
     - cat
     tty: true
-  - name: testcafe-firefox
-    image: 946759952272.dkr.ecr.us-east-1.amazonaws.com/kypseli/testcafe:alpha-1
-    command:
-    - cat
-    tty: true
-    ports:
-    - name: firefox1
-      containerPort: 1339
-    - name: firefox2
-      containerPort: 1340
