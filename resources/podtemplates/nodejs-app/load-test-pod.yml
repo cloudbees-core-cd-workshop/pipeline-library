@@ -1,0 +1,15 @@
+kind: Pod
+metadata:
+  name: nodejs-ab
+spec:
+  containers:
+  - name: nodejs
+    image: node:10.10.0-alpine
+    command:
+    - cat
+    tty: true
+  - name: apache-benchmark
+    image: 946759952272.dkr.ecr.us-east-1.amazonaws.com/kypseli/apache-benchmark:alpine3.8-2.4
+    command:
+    - cat
+    tty: true
