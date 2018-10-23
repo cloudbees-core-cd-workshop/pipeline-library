@@ -4,7 +4,7 @@ def call(imageName, imageTag) {
     def podYaml = libraryResource 'podtemplates/kubeDeploy.yml'
     def deployYaml = libraryResource 'k8s/basicDeploy.yml'
     def repoName = env.IMAGE_REPO.toLowerCase()
-    podTemplate(name: 'kubectl', label: label, namespace: 'cb-deploy',  yaml: podYaml) {
+    podTemplate(name: 'kubectl', label: label, yaml: podYaml) {
       node(label) {
         writeFile file: "deploy.yml", text: deployYaml
         container("kubectl") {
